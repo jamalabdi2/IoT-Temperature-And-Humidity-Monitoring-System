@@ -1,0 +1,41 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .sensor-data {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .sensor-data-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .sensor-data-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .sensor-data-item p {
+    font-size: 20px;
+  }
+
+  

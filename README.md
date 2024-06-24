@@ -4,6 +4,8 @@
 The IoT-Based Smart Weather Monitoring System is designed to continuously monitor and display real-time temperature and humidity data. 
 The system uses a combination of hardware (DHT11 sensor and Arduino Uno) and software (Node.js server and React frontend) to provide a comprehensive solution for weather monitoring.
 
+Sensor data can be stored in  a CSV file, JSON file, or MongoDB Atlas.
+
 ## Features
 - **Real-time Monitoring:** Continuously monitors temperature and humidity.
 - **Data Visualization:** Displays real-time data using gauges and line charts.
@@ -21,6 +23,7 @@ Temperature and humidity real time chart
 - SerialPort: Library for reading from and writing to serial ports.
 - WebSocket: Enables real-time communication between the server and clients.
 - Moment.js: Library for parsing, validating, manipulating, and formatting dates.
+- MongoDB: For storing sensor data in Mongodb Atlas
 
 ### Frontend
 - React: JavaScript library for building user interfaces.
@@ -39,6 +42,8 @@ Temperature and humidity real time chart
 - Node.js and npm installed.
 - React installed.
 - Arduino Uno with temperature and humidity sensors connected to a serial port.
+- You have three options for storing data: CSV file, JSON file, or MongoDB Atlas.
+- For the MongoDB option, ensure you have created an account and copied the MongoDB URI to paste it into the .env file.
 
 ### Backend Setup
 1. Clone the repository:

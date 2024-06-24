@@ -19,6 +19,7 @@ function App() {
       const newData = JSON.parse(event.data);
       setTemperatureData((prevData) => [...prevData, { timestamp: newData.timestamp, value: newData.temperature }]);
       setHumidityData((prevData) => [...prevData, { timestamp: newData.timestamp, value: newData.humidity }]);
+      console.log(newData)
     };
 
     return () => {
@@ -28,7 +29,8 @@ function App() {
         console.log('WebSocket connection closed');
       }
     };
-  }, []); // Empty dependency array to run only once
+  }, []); // Empty dependency array to run only once   
+  console.log()
 
   return (
     <div className="container">

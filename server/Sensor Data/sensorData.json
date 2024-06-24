@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "24/06/2024 07:45:18 PM",
+    "temperature": 24.16,
+    "humidity": 76.02
+  },
+  {
+    "timestamp": "24/06/2024 07:45:34 PM",
+    "temperature": 22.9,
+    "humidity": 43.08
+  },
+  {
+    "timestamp": "24/06/2024 07:51:11 PM",
+    "temperature": 24.24,
+    "humidity": 66.52
+  },
+  {
+    "timestamp": "24/06/2024 07:51:17 PM",
+    "temperature": 21.34,
+    "humidity": 50.81
+  },
+  {
+    "timestamp": "24/06/2024 07:51:22 PM",
+    "temperature": 29.67,
+    "humidity": 54.1
+  },
+  {
+    "timestamp": "24/06/2024 07:51:28 PM",
+    "temperature": 27.94,
+    "humidity": 48.27
+  },
+  {
+    "timestamp": "24/06/2024 07:51:33 PM",
+    "temperature": 26.19,
+    "humidity": 60.1
+  },
+  {
+    "timestamp": "24/06/2024 07:51:39 PM",
+    "temperature": 25.94,
+    "humidity": 74.81
+  },
+  {
+    "timestamp": "24/06/2024 07:51:44 PM",
+    "temperature": 22.31,
+    "humidity": 60.33
+  },
+  {
+    "timestamp": "24/06/2024 07:51:49 PM",
+    "temperature": 24.87,
+    "humidity": 65.26
+  },
+  {
+    "timestamp": "24/06/2024 07:51:55 PM",
+    "temperature": 28.63,
+    "humidity": 36.74
+  },
+  {
+    "timestamp": "24/06/2024 07:52:01 PM",
+    "temperature": 28.96,
+    "humidity": 76.16
+  }
+]

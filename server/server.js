@@ -3,7 +3,8 @@ const cors = require('cors');
 const { SerialPort } = require('serialport');
 const { ReadlineParser } = require('@serialport/parser-readline');
 const WebSocket = require('ws');
-const moment = require('moment')
+const moment = require('moment');
+const { saveToMongoDB, saveToJSON, saveToCSV } = require('./dataStorage');
 
 const app = express();
 const port = 5003;
@@ -16,7 +17,7 @@ let wss;
 
 // Function to open the serial port
 function openSerialPort() {
-  serialPort = new SerialPort({path:'/dev/tty.usbserial-140', baudRate: 9600 }, (err) => {
+  serialPort = new SerialPort({path:'/dev/cu.usbserial-130', baudRate: 9600 }, (err) => {
     if (err) {
       console.error('Error opening serial port:', err.message);
       if (err.message.includes('Resource busy')) {
@@ -37,7 +38,7 @@ function openSerialPort() {
 
 // Function to setup parser
 function setupParser(parser) {
-  parser.on('data', (line) => {
+  parser.on('data', async (line) => {
     console.log(`Received: ${line}`);
     // Extract temperature and humidity values using regular expressions
     const temperatureMatch = line.match(/Temperature: (\d+\.\d+)/);
@@ -56,8 +57,19 @@ function setupParser(parser) {
         humidity
       };
       
-      // Broadcast data to WebSocket clients
-      broadcastData(JSON.stringify(sensorData));
+      try {
+          //save data to MongoDB, JSON file, and CSV file
+          await saveToMongoDB(sensorData)
+          await saveToJSON(sensorData, 'sensorData.json')
+          await saveToCSV(sensorData,'sensorData.csv')
+
+          // Broadcast data to WebSocket clients
+          broadcastData(JSON.stringify(sensorData));
+              
+      } catch (error) {
+          console.error('Error saving sensor data:', error.message)
+      }
+
     }
   });
 }
@@ -86,3 +98,5 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
   openSerialPort(); 
 });
+
+
